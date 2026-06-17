@@ -340,7 +340,7 @@
       "D": "Option D"
     },
     "answer": "C",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q173.jpg",
     "display_id": 25
   },
@@ -559,7 +559,7 @@
       "D": "Option D"
     },
     "answer": "C",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q153.jpg",
     "display_id": 41
   },
@@ -685,7 +685,7 @@
       "D": "Option D"
     },
     "answer": "B",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 50
   },
   {
@@ -845,7 +845,7 @@
       "D": "Option D"
     },
     "answer": "D",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q244.jpg",
     "display_id": 62
   },
@@ -980,7 +980,7 @@
       "D": "Option D"
     },
     "answer": "C",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q340.jpg",
     "display_id": 72
   },
@@ -1268,7 +1268,7 @@
       "D": "Option D"
     },
     "answer": "A",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 93
   },
   {
@@ -1323,7 +1323,7 @@
       "D": "Option D"
     },
     "answer": "D",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q292.jpg",
     "display_id": 97
   },
@@ -1363,7 +1363,7 @@
       "D": "Option D"
     },
     "answer": "B",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q115.jpg",
     "display_id": 100
   },
@@ -1432,7 +1432,7 @@
       "D": "Option D"
     },
     "answer": "D",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q330.jpg",
     "display_id": 105
   },
@@ -1706,7 +1706,7 @@
       "D": "Option D"
     },
     "answer": "A",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q234.jpg",
     "display_id": 125
   },
@@ -1733,7 +1733,7 @@
       "D": "Option D"
     },
     "answer": "B",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q158.jpg",
     "display_id": 127
   },
@@ -1761,7 +1761,7 @@
       "D": "Option D"
     },
     "answer": "B",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q303.jpg",
     "display_id": 129
   },
@@ -1855,7 +1855,7 @@
       "D": "Option D"
     },
     "answer": "B",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q330.jpg",
     "display_id": 136
   },
@@ -1923,7 +1923,7 @@
       "D": "Option D"
     },
     "answer": "D",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 141
   },
   {
@@ -1963,7 +1963,7 @@
       "D": "Option D"
     },
     "answer": "D",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 144
   },
   {
@@ -2138,7 +2138,7 @@
       "D": "Option D"
     },
     "answer": "D",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q342.jpg",
     "display_id": 157
   },
@@ -2251,7 +2251,7 @@
       "D": "Option D"
     },
     "answer": "B",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 165
   },
   {
@@ -2317,7 +2317,7 @@
       "D": "Option D"
     },
     "answer": "D",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 170
   },
   {
@@ -2330,7 +2330,7 @@
       "D": "Option D"
     },
     "answer": "D",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 171
   },
   {
@@ -2384,7 +2384,7 @@
       "D": "Option D"
     },
     "answer": "B",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 175
   },
   {
@@ -2911,7 +2911,7 @@
       "D": "Option D"
     },
     "answer": "B",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 214
   },
   {
@@ -3045,7 +3045,7 @@
       "D": "Option D"
     },
     "answer": "A",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q244.jpg",
     "display_id": 224
   },
@@ -3087,7 +3087,7 @@
       "D": "Option D"
     },
     "answer": "B",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 227
   },
   {
@@ -3238,7 +3238,7 @@
       "D": "Option D"
     },
     "answer": "C",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 238
   },
   {
@@ -3251,7 +3251,7 @@
       "D": "Option D"
     },
     "answer": "A",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 239
   },
   {
@@ -3333,7 +3333,7 @@
       "D": "Option D"
     },
     "answer": "C",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 245
   },
   {
@@ -3412,7 +3412,7 @@
       "D": "Option D"
     },
     "answer": "A",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 251
   },
   {
@@ -3532,7 +3532,7 @@
       "D": "Option D"
     },
     "answer": "B",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q335.jpg",
     "display_id": 260
   },
@@ -3750,7 +3750,7 @@
       "D": "Option D"
     },
     "answer": "D",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 276
   },
   {
@@ -3817,7 +3817,7 @@
       "D": "Option D"
     },
     "answer": "B",
-    "type": "exhibit",
+    "type": "mc",
     "display_id": 281
   },
   {
@@ -3830,7 +3830,7 @@
       "D": "Option D"
     },
     "answer": "B",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q265.jpg",
     "display_id": 282
   },
