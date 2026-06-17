@@ -451,6 +451,10 @@
         <h3><span class="icon">⭐</span> Bookmarked</h3>
         <p>Review questions you've saved for later study.</p>
       </button>
+      <button class="mode-card" data-mode="learn">
+        <h3><span class="icon">📖</span> Learning Mode</h3>
+        <p>Read through every question with its answer and explanation. No scoring, no pressure — pure study.</p>
+      </button>
       <button class="mode-card" data-mode="browse">
         <h3><span class="icon">📚</span> Browse All</h3>
         <p>Look through all questions with answers and explanations.</p>
@@ -575,6 +579,8 @@ function startSession(mode) {
   } else if (mode === 'test') {
     const pool = ALL.filter(q => q.type === 'mc' || q.type === 'exhibit' || q.type === 'multiple-choice');
     queue = shuffle([...pool]).slice(0, Math.min(60, pool.length));
+  } else if (mode === 'learn') {
+    queue = ALL.filter(q => q.type === 'mc' || q.type === 'exhibit' || q.type === 'multiple-choice');
   } else if (mode === 'wrong') {
     queue = ALL.filter(q => ANSWERED[q.id] === 'wrong');
     if (queue.length === 0) { showToast('No missed questions yet!', 'success'); return; }
@@ -602,7 +608,7 @@ function startSession(mode) {
 }
 
 function labelForMode(m) {
-  return { quiz: 'Quiz', test: 'Timed Test', wrong: 'Missed', bookmarks: 'Bookmarks' }[m] || m;
+  return { quiz: 'Quiz', test: 'Timed Test', wrong: 'Missed', bookmarks: 'Bookmarks', learn: '📖 Learning' }[m] || m;
 }
 
 function shuffle(arr) {
@@ -679,7 +685,9 @@ function renderCurrent() {
       div.dataset.letter = L;
       div.innerHTML = '<div class="letter">' + L + '</div><div class="otext">' +
         escapeHtml(q.options[L] || '') + '</div>';
-      div.addEventListener('click', () => selectOption(L));
+      if (SESSION.mode !== 'learn') {
+        div.addEventListener('click', () => selectOption(L));
+      }
       optsEl.appendChild(div);
     });
   }
@@ -708,10 +716,37 @@ function renderCurrent() {
   document.getElementById('check-btn').style.display = '';
   document.getElementById('next-btn').style.display = 'none';
   document.getElementById('prev-btn').disabled = SESSION.idx === 0;
+
+  // Learning mode: immediately reveal the answer
+  if (SESSION.mode === 'learn') {
+    revealAnswer(q);
+  }
+}
+
+function revealAnswer(q) {
+  const isMulti = q.type === 'multiple-choice';
+  const correctSet = isMulti
+    ? new Set(q.answer.split(',').map(s => s.trim()).filter(Boolean))
+    : new Set([q.answer]);
+  document.querySelectorAll('.option').forEach(el => {
+    el.classList.add('disabled');
+    const L = el.dataset.letter;
+    if (correctSet.has(L)) el.classList.add('correct');
+  });
+  const fb = document.getElementById('feedback');
+  fb.className = 'feedback show right';
+  let html = '<div class="label">📖 Answer: <b>' + escapeHtml(q.answer) + '</b></div>';
+  if (q.explanation) html += '<div class="explanation"><b>Explanation:</b><br>' + escapeHtml(q.explanation) + '</div>';
+  fb.innerHTML = html;
+  document.getElementById('check-btn').style.display = 'none';
+  document.getElementById('next-btn').style.display = '';
+  document.getElementById('next-btn').textContent =
+    SESSION.idx === SESSION.queue.length - 1 ? '↻ Start Over' : 'Next →';
 }
 
 function selectOption(letter, silent = false) {
   if (!SESSION) return;
+  if (SESSION.mode === 'learn') return;  // no interaction in learning mode
   const q = SESSION.queue[SESSION.idx];
   if (SESSION.results[q.id]) return;  // already checked
   const isMulti = q.type === 'multiple-choice';
@@ -791,6 +826,12 @@ function showCheckFeedback(q, chosen, animated) {
 
 function nextQuestion() {
   if (!SESSION) return;
+  // Learning mode wraps to the start when you reach the end
+  if (SESSION.mode === 'learn' && SESSION.idx === SESSION.queue.length - 1) {
+    SESSION.idx = 0;
+    renderCurrent();
+    return;
+  }
   SESSION.idx++;
   renderCurrent();
 }
@@ -1069,7 +1110,7 @@ async function init() {
 
   // Auto-start mode from hash (e.g. test.html#quiz)
   const hash = (location.hash || '').replace('#', '').toLowerCase();
-  if (['quiz', 'test', 'wrong', 'bookmarks', 'browse'].includes(hash)) {
+  if (['quiz', 'test', 'wrong', 'bookmarks', 'browse', 'learn'].includes(hash)) {
     setTimeout(() => startSession(hash), 100);
   }
 }
