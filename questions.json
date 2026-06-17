@@ -1354,7 +1354,7 @@
   },
   {
     "id": 115,
-    "question": "Refer to the exhibit. An engineer logs all occurrences of a configuration being saved. The engineer must\ngenerate an additional log message when someone attempts to change the configuration for interface Ethernet\n1/1.\nWhich set of commands must be used to meet these requirements?\nA)\nB)\nC)\nD)",
+    "question": "Refer to the exhibit. An engineer logs all occurrences of a configuration being saved. The engineer must\ngenerate an additional log message when someone attempts to change the configuration for interface Ethernet\n1/1.\nWhich set of commands must be used to meet these requirements?",
     "options": {
       "A": "Option A",
       "B": "Option B",
