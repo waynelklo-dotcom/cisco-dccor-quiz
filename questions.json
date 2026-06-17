@@ -187,7 +187,7 @@
       "D": "MDS-01(config)# interface fc1/11\n MDS-01(config-if)# cts mode gcm"
     },
     "answer": "C",
-    "type": "exhibit",
+    "type": "mc",
     "exhibit": "src1_q254.jpg",
     "display_id": 14
   },
