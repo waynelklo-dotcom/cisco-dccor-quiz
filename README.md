@@ -65,3 +65,31 @@ python merge_questions.py    # builds questions.json
 ```
 
 (Each script caches intermediate results so re-runs are fast.)
+
+## Deploy to GitHub Pages
+
+The app is a fully static site, so it's free to host on GitHub Pages.
+
+**First-time setup (one time):**
+
+1. Create an empty repo on github.com (do **not** add README/license/.gitignore)
+2. From this folder:
+   ```powershell
+   git remote add origin https://github.com/waynelklo-dotcom/cisco-dccor-quiz.git
+   git push -u origin main
+   ```
+3. On github.com: **Settings → Pages → Source: `main` / `(root)` → Save**
+4. Wait ~1 minute. Site is live at:
+   `https://waynelklo-dotcom.github.io/cisco-dccor-quiz/test.html`
+
+**Updating after changes** (questions, exhibits, or test.html):
+
+```powershell
+git add .
+git commit -m "describe what changed"
+git push
+```
+
+Or just double-click `deploy.bat` — it does all three.
+
+Custom domain: **Settings → Pages → Custom domain**, then add a CNAME at your DNS provider.

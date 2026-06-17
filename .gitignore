@@ -1,6 +1,7 @@
 # Dev tools (not deployed)
 *.py
 *.bat
+!deploy.bat
 
 # System / OpenClaw
 .openclaw/
