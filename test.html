@@ -467,6 +467,7 @@
       <button id="back-home">← Home</button>
       <div style="flex:1"></div>
       <span id="mode-label" style="color: var(--text-dim); font-size: 13px;"></span>
+      <span id="kb-hint" title="Keyboard: ← / → to navigate, space to check/next" style="color: var(--text-dim); font-size: 11px; opacity: 0.7; margin-left: 10px; user-select: none; white-space: nowrap;">← → navigate</span>
     </div>
     <div class="progress-bar"><div id="progress" style="width: 0%"></div></div>
     <div class="qmeta">
@@ -1114,6 +1115,36 @@ async function init() {
     setTimeout(() => startSession(hash), 100);
   }
 }
+
+// Keyboard navigation: ←/→ for prev/next, Space for check/next
+document.addEventListener('keydown', (e) => {
+  if (!SESSION || SESSION.queue.length <= 1) return;
+  if (!document.getElementById('test-view').classList.contains('active')) return;
+  const tag = (e.target.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.key === 'ArrowRight') {
+    e.preventDefault();
+    nextQuestion();
+  } else if (e.key === 'ArrowLeft') {
+    e.preventDefault();
+    prevQuestion();
+  } else if (e.key === ' ' || e.code === 'Space') {
+    // Space: check if not yet checked (in non-learn modes), else go to next
+    if (SESSION.mode === 'learn') {
+      e.preventDefault();
+      nextQuestion();
+    } else {
+      const q = SESSION.queue[SESSION.idx];
+      if (q && !SESSION.results[q.id]) {
+        if (SESSION.answers[q.id]) { e.preventDefault(); checkAnswer(); }
+      } else {
+        e.preventDefault();
+        nextQuestion();
+      }
+    }
+  }
+});
 init();
 </script>
 </body>
