@@ -744,7 +744,7 @@
   },
   {
     "id": 237,
-    "question": "A)\nB)\nC)\nD)",
+    "question": "",
     "options": {
       "A": "Option A",
       "B": "Option B",
@@ -753,6 +753,7 @@
     },
     "answer": "C",
     "type": "mc",
+    "exhibit": "src1_q237.jpg",
     "display_id": 55
   },
   {
