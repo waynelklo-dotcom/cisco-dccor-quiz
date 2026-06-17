@@ -8007,5 +8007,34 @@
     "type": "multiple-choice",
     "explanation": "A,B",
     "display_id": 574
+  },
+  {
+    "id": 528,
+    "question": "An engineer configures multiple blade servers for OS installation. The requirements are to use the internalHDDs inside the Cisco UCS blade server and for the OS to remain operational even if one of the HDDs isremoved for maintenance. Each blade has two internal HDDs. Which two actions must be taken to meet theserequirements? (Choose two.)",
+    "options": {
+      "A": "Set Enforce vNIC/vHBA/iSCSI Name to disabled",
+      "B": "Set the Local Disk Policy Mode to RAID 1.",
+      "C": "Set the First Boot Order to be Local LUN",
+      "D": "Set Boot Policy Mode to UEFI"
+    },
+    "answer": "B,C",
+    "type": "multiple-choice",
+    "explanation": "B,C",
+    "display_id": 575
+  },
+  {
+    "id": 529,
+    "question": "In a Cisco SAN fabric, UCS fabric interconnects and blades are all monitored by Cisco DCNM. The requirement is for the Cisco UCS manager to be monitored by Cisco DCNM. Which two configuration steps accomplish this goal? (Choose two.)",
+    "options": {
+      "A": "Configure NTP in the equipment policies.",
+      "B": "Create an SNMP user using SHA and AES-128.",
+      "C": "Configure high availability for the uplinks.",
+      "D": "Add a locally authenticated read-only user.",
+      "E": "Configure the DCNM IP address as a seed IP."
+    },
+    "answer": "A,B",
+    "type": "multiple-choice",
+    "explanation": "A,B",
+    "display_id": 576
   }
 ]
