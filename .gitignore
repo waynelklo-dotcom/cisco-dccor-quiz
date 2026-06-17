@@ -1,0 +1,12 @@
+# Dev tools (not deployed)
+*.py
+*.bat
+
+# System / OpenClaw
+.openclaw/
+logs/
+*.log
+
+# OS junk
+Thumbs.db
+.DS_Store
